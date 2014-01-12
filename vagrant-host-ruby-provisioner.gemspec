@@ -1,13 +1,16 @@
-($:).unshift File.expand_path '../lib', __FILE__
+($:).unshift File.expand_path 'lib', (File.dirname __FILE__)
 
 require 'vagrant-host-ruby-provisioner/info'
 require 'vagrant-host-ruby-provisioner/version'
 
 Gem::Specification.new do |spec|
-  spec.authors      = 'Jonathan Barronville'
+  spec.authors = [
+    'Jonathan Barronville',
+  ]
+
   spec.description  = VagrantPlugins::HostRubyProvisioner::INFO[:description]
   spec.email        = 'jonathan.barronville@jebbit.com'
-  spec.homepage     = 'https://github.com/jonathanmarvens/vagrant-host-ruby-provisioner'
+  spec.homepage     = 'https://github.com/jebbit/vagrant-host-ruby-provisioner'
   spec.license      = VagrantPlugins::HostRubyProvisioner::INFO[:license]
   spec.name         = VagrantPlugins::HostRubyProvisioner::INFO[:name_full_slug]
   spec.platform     = Gem::Platform::RUBY

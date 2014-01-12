@@ -4,6 +4,12 @@
 
 Vagrant Ruby provisioner for executing Ruby code on the host.
 
+## Installation
+
+```sh
+vagrant plugin install vagrant-host-ruby-provisioner
+```
+
 ## Usage
 
 ```ruby
