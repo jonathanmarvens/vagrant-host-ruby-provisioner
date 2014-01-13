@@ -7,7 +7,6 @@
         },
         routine: {
           not_lambda: 'The `routine` configuration provided is not a `lamdba`. You can create a `lambda` like this: `lambda { ... }`.',
-          required: 'The `routine` configuration is required and was not provided.',
         },
       },
     },

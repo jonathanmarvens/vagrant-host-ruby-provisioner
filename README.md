@@ -28,7 +28,7 @@ end
 
  - `clean`: The cleanup routine to be executed. __Default:__ `lambda {}`.
  - `cwd`: The current working directory. __Default:__ `nil` (which makes it the directory containing "__Vagrantfile__").
- - `routine`: The main routine to be executed. __Required__.
+ - `routine`: The main routine to be executed. __Default:__ `lambda {}`.
 
 ## Tests
 
