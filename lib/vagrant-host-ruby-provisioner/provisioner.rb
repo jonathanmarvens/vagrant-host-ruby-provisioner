@@ -11,7 +11,9 @@ module VagrantPlugins
 
       def cleanup
         if @config.cwd
-          Dir.chdir @config.cwd, &(method :_execute_clean)
+          routine = method :_execute_clean
+
+          Dir.chdir @config.cwd, &(proc { routine.call })
         else
           _execute_clean
         end
@@ -19,7 +21,9 @@ module VagrantPlugins
 
       def provision
         if @config.cwd
-          Dir.chdir @config.cwd, &(method :_execute_routine)
+          routine = method :_execute_routine
+
+          Dir.chdir @config.cwd, &(proc { routine.call })
         else
           _execute_routine
         end
