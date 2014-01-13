@@ -7,7 +7,7 @@ module VagrantPlugins
       attr_reader :source_root
 
       def source_root
-        Pathname.new File.expand_path '../', (File.dirname __FILE__)
+        Pathname.new File.expand_path '..', (File.dirname __FILE__)
       end
     end
   end
