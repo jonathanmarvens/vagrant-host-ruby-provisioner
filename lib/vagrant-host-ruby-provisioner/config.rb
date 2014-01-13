@@ -21,20 +21,22 @@ module VagrantPlugins
         if @cwd == UNSET_VALUE
           @cwd = nil
         end
+
+        if @routine == UNSET_VALUE
+          @routine = lambda {}
+        end
       end
 
       def validate machine
         errors  = _detected_errors
         results = {}
 
-        if @routine == UNSET_VALUE
-          errors << (I18n.t :'vagrant_host_ruby_provisioner.config.routine.required')
-        elsif ! @routine.lambda?
-          errors << (I18n.t :'vagrant_host_ruby_provisioner.config.routine.not_lambda')
-        end
-
         if ! @clean.lambda?
           errors << (I18n.t :'vagrant_host_ruby_provisioner.config.clean.not_lambda')
+        end
+
+        if ! @routine.lambda?
+          errors << (I18n.t :'vagrant_host_ruby_provisioner.config.routine.not_lambda')
         end
 
         results[HostRubyProvisioner::INFO[:name]] = errors
